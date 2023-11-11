@@ -169,6 +169,7 @@ const usbd_driver* target_usb_init(void) {
     for (i = 0; i < 800000; i++) {
         __asm__("nop");
     }
+    gpio_set_mode(GPIOA, GPIO_MODE_INPUT, GPIO_CNF_INPUT_FLOAT, GPIO12);
 #endif
 
     return &st_usbfs_v1_usb_driver;
